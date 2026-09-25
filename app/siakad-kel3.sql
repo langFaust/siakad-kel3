@@ -25,8 +25,8 @@ INSERT INTO siswa (
 
 CREATE TABLE guru (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nama VARCHAR(100) NO NULL,
-    nip INT NO NULL UNIQUE,
+    nama VARCHAR(100) NOT NULL,
+    nip INT NOT NULL UNIQUE,
     jenis_kelamin ENUM("L", "P") NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     no_telpon VARCHAR(20) NOT NULL
@@ -42,4 +42,32 @@ INSERT INTO guru (
     (
         "Imron", "186347648", "L", "imron@anuan.id", "08137683653"
     );
+
+
+CREATE TABLE kelas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama_kelas VARCHAR(100) NOT NULL,
+    tingkat INT NOT NULL
+);
+
+CREATE TABLE jurusan (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama_jurusan VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE mata_pelajaran (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama_mapel VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE semester (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama_semester ENUM("1", "2") NOT NULL
+);
+
+CREATE TABLE tahun_ajaran (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tahun_mulai INT NOT NULL,
+    tahun_selesai INT NOT NULL
+);
 
